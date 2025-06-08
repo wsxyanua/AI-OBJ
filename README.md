@@ -44,9 +44,12 @@ pip install -r requirements.txt
 
 4. Install model YOLOv8:
 ```bash
-# Model sẽ được tự động tải khi chạy lần đầu
-# Hoặc bạn có thể tải thủ công:
+# Install model YOLOv8n (lightest version)
 wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
+
+# Or download model YOLOv3
+wget https://pjreddie.com/media/files/yolov3.weights
+wget https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolov3.cfg
 ```
 
 ## Usage
