@@ -1,10 +1,35 @@
-# Object Detection Project
+# AI Object Detection
 
-Dự án phát hiện đối tượng sử dụng YOLOv8 và PyTorch.
+Real-time object detection system using YOLOv8 with support for images, videos, and webcam feeds.
 
-## Cài đặt
+## Features
 
-1. Tạo môi trường ảo (khuyến nghị):
+- 🚀 Real-time object detection
+- 📷 Multiple input sources support:
+  - Image files (jpg, png, etc.)
+  - Video files (mp4, avi, etc.)
+  - Webcam feed
+- 🎯 Adjustable confidence threshold
+- 💾 Save detection results
+- 🎨 Visual output with bounding boxes and labels
+- 🔍 Supports 80 COCO dataset object classes
+
+## Requirements
+
+- Python 3.10.14
+- OpenCV
+- Ultralytics YOLOv8
+- NumPy
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/wsxyanua/AI-OBJ.git
+cd AI-OBJ
+```
+
+2. Create a virtual environment:
 ```bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
@@ -12,51 +37,77 @@ source venv/bin/activate  # Linux/Mac
 .\venv\Scripts\activate  # Windows
 ```
 
-2. Cài đặt các thư viện cần thiết:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-3. Tải model YOLOv8:
+4. Install model YOLOv8:
 ```bash
 # Model sẽ được tự động tải khi chạy lần đầu
 # Hoặc bạn có thể tải thủ công:
 wget https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt
 ```
 
-## Sử dụng
-
-1. Phát hiện đối tượng trong ảnh:
+## Usage
+Basic Usage
+1. Image detection:
 ```bash
 python src/detect.py --source path/to/image.jpg
 ```
 
-2. Phát hiện đối tượng trong video:
+2. Video detection:
 ```bash
 python src/detect.py --source path/to/video.mp4
 ```
 
-3. Phát hiện đối tượng từ webcam:
+3. Webcam detection:
 ```bash
 python src/detect.py --source 0
 ```
 
-## Tính năng
+Advanced Usage:
+1. Set confidence threshold:
+```bash
+python src/detect.py --source video.mp4 --conf 0.25
+```
 
-- Phát hiện đối tượng trong ảnh tĩnh
-- Phát hiện đối tượng trong video
-- Hỗ trợ webcam
-- Hiển thị kết quả với bounding boxes và nhãn
-- Lưu kết quả ra file
+2. Save detection results:
+```bash
+python src/detect.py --source image.jpg --save
+```
 
+3. Specify output directory:
+```bash
+python src/detect.py --source video.mp4 --save --output results
+```
+## Detectable Objects
+Supports 80 object classes including:
+
+- People and animals
+- Vehicles
+- Electronics
+- Household items
+- Sports equipment
+- Food items
+
+Full list available in 'coco.names'.
 ## Model
 
-Dự án sử dụng YOLOv8, một trong những model object detection mạnh nhất hiện nay:
-- Tốc độ xử lý nhanh
-- Độ chính xác cao
-- Hỗ trợ nhiều loại đối tượng
-- Dễ dàng fine-tune cho các use case cụ thể
+Uses YOLOv8n (nano) model, offering:
+- Fast inference speed
+- Good accuracy
+- Low resource requirements
+- Pre-trained on COCO dataset
+
+## Controls
+- Press 'q' to quit the detection window
+- Detection relsult are display in real-time
 
 ## License
 
-Dự án này được cấp phép theo MIT License - xem file [LICENSE](LICENSE) để biết thêm chi tiết. 
+This project is license under the MIT License - see file [LICENSE](LICENSE) file for detail
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request
