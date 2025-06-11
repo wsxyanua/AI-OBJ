@@ -86,39 +86,35 @@ python src/detect.py --source rtsp://username:password@ip:port/stream
 
 ### Advanced Usage
 
-1. Set confidence threshold:
+1. Object Tracking:
 ```bash
-python src/detect.py --source video.mp4 --conf 0.25
+python3 src/detect.py --source 0 --track
 ```
 
-2. Save detection results:
+2. Class Filtering:
 ```bash
-python src/detect.py --source image.jpg --save
+# Detect only persons, bicycles, and cars
+python3 src/detect.py --source video.mp4 --classes person,bicycle,car
 ```
 
-3. Specify output directory:
+3. JSON Export:
 ```bash
-python src/detect.py --source video.mp4 --save --output results
+python3 src/detect.py --source video.mp4 --export-json
 ```
 
-4. Enable object tracking:
+4. Custom Colors:
 ```bash
-python src/detect.py --source 0 --track
+python3 src/detect.py --source 0 --colors "255,0,0;0,255,0;0,0,255"
 ```
 
-5. Filter specific classes:
+5. Adjust Confidence:
 ```bash
-python src/detect.py --source video.mp4 --classes 0 1 2  # Detect only persons, bicycles, and cars
+python3 src/detect.py --source 0 --conf 0.5
 ```
 
-6. Export results to JSON:
+6. Save Results:
 ```bash
-python src/detect.py --source video.mp4 --json
-```
-
-7. Customize bounding box colors:
-```bash
-python src/detect.py --source 0 --colors
+python3 src/detect.py --source video.mp4 --save --output results
 ```
 
 ## Detectable Objects
@@ -146,9 +142,6 @@ Uses YOLOv8n (nano) model, offering:
 
 - Press 'q' to quit the detection window
 - Detection results are displayed in real-time
-- Press 's' to save current frame
-- Press 't' to toggle tracking mode
-- Press 'j' to toggle JSON export
 
 ## Performance
 
