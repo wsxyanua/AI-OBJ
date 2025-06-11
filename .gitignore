@@ -1,32 +1,60 @@
-# Python virtual environment
-venv/
-env/
-ENV/
-
-# Python cache files
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-
-# Distribution / packaging
-dist/
+*.so
+.Python
 build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
 *.egg-info/
+.installed.cfg
+*.egg
 
-# IDE specific files
+# Virtual Environment
+venv/
+ENV/
+env/
+
+# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
 
-# Model files (large binary files)
-*.weights
+# Project specific
 *.pt
+*.weights
+*.cfg
+*.mp4
+*.avi
+*.jpg
+*.jpeg
+*.png
+*.json
+results/
+output/
+
+# Logs
+*.log
+
+# Distribution / packaging
+*.egg-info/
+
+# Model files (large binary files)
 *.caffemodel
 *.onnx
 
 # Logs and databases
-*.log
 *.sqlite3
 
 # Environment variables
